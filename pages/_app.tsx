@@ -65,6 +65,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div className={inter.variable}>
       <GlobalStyle />
       <Suspense fallback={<Loading />}>
+        <Loading />
         <Component {...pageProps} />
       </Suspense>
     </div>
