@@ -1,4 +1,62 @@
-import Head from 'next/head'
+import Head from "next/head";
+import styled from "styled-components";
+import { BsArrowRightShort } from "react-icons/bs";
+import Link from "next/link";
+
+const Main = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("https://ik.imagekit.io/tallyacademy/tally-academy-india_qLvlexaDreZ.jpg")
+      no-repeat center center/cover;
+  color: var(--light-color);
+  text-align: center;
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-block: 0.5rem;
+  }
+  p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-block: 0.5rem;
+  }
+  & a {
+    transition: all 0.15s;
+    padding: 1rem 1.5rem;
+    border: 1px solid rgb(var(--light-color));
+    border-radius: 0.25rem;
+    background-color: var(--light-color);
+    color: var(--light-color);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    & svg {
+      transition: all 0.15s;
+      scale: 0;
+      visibility: hidden;
+      opacity: 0;
+      width: 0;
+    }
+    &:hover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-color: rgb(var(--primary-color));
+      & svg {
+        scale: 1;
+        visibility: visible;
+        opacity: 1;
+        width: auto;
+      }
+    }
+  }
+`;
 
 export default function Home() {
   return (
@@ -9,10 +67,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     <main>
-        <h1>Infotech Success Point</h1>
-        
-     </main>
+      <Main>
+        <h1>Why join Infotech Success Point ?</h1>
+        <p>Get career-ready with job-oriented learning</p>
+        <Link href="/courses">
+          Our Courses <BsArrowRightShort />
+        </Link>
+      </Main>
     </>
-  )
+  );
 }
