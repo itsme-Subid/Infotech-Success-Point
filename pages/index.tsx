@@ -2,6 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import { BsArrowRightShort } from "react-icons/bs";
 import Link from "next/link";
+import bg from "./../public/homePageBackground.jpg";
 
 const Main = styled.main`
   display: flex;
@@ -11,8 +12,7 @@ const Main = styled.main`
   gap: 1rem;
   min-height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("https://ik.imagekit.io/tallyacademy/tally-academy-india_qLvlexaDreZ.jpg")
-      no-repeat center center/cover;
+    url(${bg.src}) no-repeat center center/cover;
   color: var(--light-color);
   text-align: center;
   h1 {
