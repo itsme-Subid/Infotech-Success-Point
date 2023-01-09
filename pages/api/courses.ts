@@ -11,7 +11,14 @@ export default function handler(
   try {
     readFile("./courseDetails/courses.json", "utf8", (err, data) => {
       if (!!err) {
-        res.status(500).json({ error: err.message });
+        // res.status(500).json({ error: err.message });
+        readFile("/courseDetails/courses.json", "utf8", (err, data) => {
+          if (!!err) {
+            res.status(500).json({ error: err.message });
+          } else {
+            res.status(200).json({ data });
+          }
+        });
       } else {
         res.status(200).json(JSON.parse(data));
       }
