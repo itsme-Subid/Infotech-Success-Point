@@ -11,14 +11,7 @@ export default function handler(
   try {
     readFile("./public/courseDetails/courses.json", "utf8", (err, data) => {
       if (!!err) {
-        // res.status(500).json({ error: err.message });
-        readFile("https://infotech-success-point.vercel.app/courseDetails/courses.json", "utf8", (err, data) => {
-          if (!!err) {
-            res.status(500).json({ error: err.message });
-          } else {
-            res.status(200).json({ data });
-          }
-        });
+        res.status(500).json({ error: err.message });
       } else {
         res.status(200).json(JSON.parse(data));
       }
