@@ -9,7 +9,7 @@ export default function handler(
   }>
 ) {
   try {
-    readFile("./public/courseDetails/courses.json", "utf8", (err, data) => {
+    readFile("./courseDetails/courses.json", "utf8", (err, data) => {
       if (!!err) {
         res.status(500).json({ error: err.message });
       } else {
