@@ -81,7 +81,7 @@ const index = () => {
         animate="show"
       >
         {courses?.map((course, index) => {
-          return <Course key={index} course={course} />;
+          return course && <Course key={index} course={course} />;
         })}
       </motion.div>
     </Courses>

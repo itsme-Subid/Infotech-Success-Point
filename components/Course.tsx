@@ -58,19 +58,23 @@ const Course = ({
   return (
     <CourseStyled>
       <motion.div className="wrapper" variants={item} transition={{ delay: 1 }}>
-        <h2>{course.title}</h2>
-        <p className="courseDetails">
-          <span>
-            Duration: <b>{course.duration}</b>
-          </span>
-          <span>
-            Eligibility: <b>{course.eligibility}</b>
-          </span>
-          <span>
-            Code no.: <b>{course.codeNo}</b>
-          </span>
-        </p>
-        <p>{course.description}</p>
+        {course && (
+          <>
+            <h2>{course.title}</h2>
+            <p className="courseDetails">
+              <span>
+                Duration: <b>{course.duration}</b>
+              </span>
+              <span>
+                Eligibility: <b>{course.eligibility}</b>
+              </span>
+              <span>
+                Code no.: <b>{course.codeNo}</b>
+              </span>
+            </p>
+            <p>{course.description}</p>
+          </>
+        )}
       </motion.div>
     </CourseStyled>
   );
