@@ -80,7 +80,7 @@ const index = () => {
         initial="hidden"
         animate="show"
       >
-        {courses.map((course, index) => {
+        {courses?.map((course, index) => {
           return <Course key={index} course={course} />;
         })}
       </motion.div>
