@@ -103,6 +103,8 @@ const Header = () => {
         left: 0,
         width: "100%",
         zIndex: 10,
+        background: "rgba(var(--dark-color), 0.8)",
+        backdropFilter: "blur(5px) ",
       }}
     >
       <Alert>
