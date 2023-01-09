@@ -12,7 +12,7 @@ export default function handler(
     readFile("./public/courseDetails/courses.json", "utf8", (err, data) => {
       if (!!err) {
         // res.status(500).json({ error: err.message });
-        readFile("./courseDetails/courses.json", "utf8", (err, data) => {
+        readFile("https://infotech-success-point.vercel.app/courseDetails/courses.json", "utf8", (err, data) => {
           if (!!err) {
             res.status(500).json({ error: err.message });
           } else {
