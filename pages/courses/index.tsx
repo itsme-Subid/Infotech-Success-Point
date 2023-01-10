@@ -62,10 +62,14 @@ const index = () => {
     },
   ]);
   const fetchCourses = async () => {
-    axios.get("/api/courses").then((response) => {
-      setCourses(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get(
+        "https://infotech-success-point.vercel.app/courseDetails/courses.json"
+      )
+      .then((response) => {
+        setCourses(response.data);
+        console.log(response.data);
+      });
   };
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
