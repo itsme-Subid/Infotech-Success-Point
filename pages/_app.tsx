@@ -1,20 +1,24 @@
 import Head from "next/head";
 import type { AppProps } from "next/app";
-import { Inter } from "@next/font/google";
+import { Poppins } from "@next/font/google";
 import { createGlobalStyle } from "styled-components";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import Loading from "../components/Loading";
 import { motion } from "framer-motion";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const Footer = lazy(() => import("../components/Footer"));
+const Header = lazy(() => import("../components/Header"));
+
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+});
 
 const GlobalStyle = createGlobalStyle`
 :root {
   --light-color: 235, 236, 241;
-  --dark-color: 13, 14, 18;
-  --primary-color: 180, 129, 88;
+  --dark-color: 49, 49, 49;
+  --primary-color: 251, 237, 184;
   --primary-text-color: 233, 196, 151;
   --secondary-color: 86, 60, 40;
   --white-color: 255, 255, 255;
@@ -24,12 +28,12 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-inter, sans-serif);
+  font-family: var(--font-poppins, sans-serif);
   outline: none;
 }
 body {
-  background: rgba(var(--dark-color), 1);
-  color: rgba(var(--light-color), 1);
+  background: rgba(var(--light-color), 1);
+  color: rgba(var(--dark-color), 1);
   overflow-x: hidden;
   scroll-behavior: smooth;
   transition: all 0.15s ease;
@@ -84,7 +88,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={inter.variable}>
+      <div className={poppins.variable}>
         <motion.div variants={container} initial="hidden" animate="show">
           <GlobalStyle />
           <Header />

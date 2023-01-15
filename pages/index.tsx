@@ -11,9 +11,13 @@ const Main = styled.main`
   flex-direction: column;
   gap: 1rem;
   min-height: 100vh;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+  background: linear-gradient(
+      0deg,
+      rgba(var(--dark-color), 0.5),
+      rgba(var(--dark-color), 0.5)
+    ),
     url(${bg.src}) no-repeat center center/cover;
-  color: var(--light-color);
+  color: rgb(var(--light-color));
   text-align: center;
   h1 {
     font-size: 2.5rem;
@@ -26,40 +30,41 @@ const Main = styled.main`
     margin-block: 0.5rem;
   }
   & a {
-    transition: all 0.15s;
-    padding: 1rem 1.5rem;
-    border: 1px solid rgb(var(--light-color));
-    border-radius: 0.25rem;
-    background-color: var(--light-color);
-    color: var(--light-color);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    & svg {
-      transition: all 0.15s;
-      scale: 0;
-      visibility: hidden;
-      opacity: 0;
-      width: 0;
-    }
-    &:hover {
+    transition: 0.15s;
+    & button {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      border-color: rgb(var(--primary-color));
+      padding: 1rem 1.5rem;
+      border: 1px solid rgb(var(--light-color));
+      border-radius: 0.25rem;
+      color: rgb(var(--light-color));
+      background-color: transparent;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.15s;
       & svg {
-        scale: 1;
-        visibility: visible;
-        opacity: 1;
-        width: auto;
+        transition: 0.15s;
+        scale: 0;
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+      }
+      &:hover {
+        & svg {
+          scale: 1;
+          visibility: visible;
+          opacity: 1;
+          width: auto;
+        }
       }
     }
   }
 `;
 
 export default function Home() {
-  
   return (
     <>
       <Head>
@@ -72,7 +77,9 @@ export default function Home() {
         <h1>Why join Infotech Success Point ?</h1>
         <p>Get career-ready with job-oriented learning</p>
         <Link href="/courses">
-          Our Courses <BsArrowRightShort />
+          <button>
+            Our Courses <BsArrowRightShort />
+          </button>
         </Link>
       </Main>
     </>

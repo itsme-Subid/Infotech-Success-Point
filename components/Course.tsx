@@ -16,9 +16,9 @@ const CourseStyled = styled.div`
     height: 100%;
     font-size: 1rem;
     padding: 1rem;
-    border-radius: 0.25rem;
-    border: 1px solid rgba(var(--light-color), 0.5);
-    background: rgba(var(--dark-color));
+    border-radius: 0.5rem;
+    border: 1px solid rgba(var(--dark-color), 0.5);
+    background: rgba(var(--light-color));
     & h2 {
       text-align: center;
     }
@@ -35,6 +35,9 @@ const CourseStyled = styled.div`
         align-items: center;
         flex-direction: column;
       }
+    }
+    & .description{
+      text-align: justify;
     }
   }
 `;
@@ -76,7 +79,7 @@ const Course = ({
             Code no.: <b>{course.codeNo}</b>
           </span>
         </p>
-        <p>{course.description}</p>
+        <p className="description">{course.description}</p>
       </div>
     </CourseStyled>
   );

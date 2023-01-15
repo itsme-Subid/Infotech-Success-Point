@@ -18,6 +18,7 @@ const Alert = styled.div`
   padding-block: 0.5rem;
   width: 90%;
   margin-inline: auto;
+  color: rgba(var(--light-color));
   .assist {
     display: flex;
     align-items: center;
@@ -51,6 +52,7 @@ const Navbar = styled.nav`
   padding-block: 0.5rem;
   width: 90%;
   margin-inline: auto;
+  color: rgba(var(--light-color));
   & .logo {
     display: flex;
     align-items: center;
