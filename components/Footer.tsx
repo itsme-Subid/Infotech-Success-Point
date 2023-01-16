@@ -49,6 +49,13 @@ const FooterElement = styled.footer`
           font-weight: 600;
         }
       }
+      @media screen and (max-width: 50rem) {
+        &.social .col-body {
+          & ul {
+            align-items: center;
+          }
+        }
+      }
       & .col-body {
         & ul {
           list-style: none;
@@ -66,9 +73,9 @@ const FooterElement = styled.footer`
             &:hover {
               color: rgb(var(--primary-color), 0.8);
             }
-            &.description {
-              white-space: normal;
-            }
+          }
+          &.description li {
+            white-space: normal;
           }
         }
       }
@@ -102,11 +109,17 @@ const FooterElement = styled.footer`
     justify-content: space-between;
     align-items: center;
     font-size: 0.75rem;
+    @media screen and (max-width: 50rem) {
+      flex-direction: column;
+    }
     & .left {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      @media screen and (max-width: 50rem) {
+        flex-direction: column;
+      }
       & .socials {
         display: flex;
         justify-content: center;
@@ -141,8 +154,8 @@ const Footer = () => {
               <span>Computer learning center</span>
             </div>
             <div className="col-body">
-              <ul>
-                <li className="description">
+              <ul className="description">
+                <li>
                   Designed and built with all the love in the world by the
                   Infotech Success Point team using Next.js.
                 </li>
@@ -150,7 +163,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col">
+          <div className="col social">
             <div className="col-header">
               <h2>Social</h2>
             </div>
@@ -196,7 +209,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="col dashboard">
-            <Link href="/">Dashboard</Link>
+            <Link href="/auth/login">Dashboard</Link>
           </div>
         </div>
         <div className="credits">

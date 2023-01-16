@@ -29,7 +29,6 @@ const CourseStyled = styled.div`
       align-items: center;
       gap: 1rem;
       & span {
-        font-weight: lighter;
         text-align: center;
         display: flex;
         justify-content: center;
