@@ -19,15 +19,25 @@ const Main = styled.main`
     url(${bg.src}) no-repeat center center/cover;
   color: rgb(var(--light-color));
   text-align: center;
-  h1 {
+  & h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-block: 0.5rem;
+    color: rgb(var(--primary-color));
   }
-  p {
+  & h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: rgb(var(--primary-color));
+  }
+  & h3,
+  h4 {
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+  }
+  & p {
     font-size: 1.25rem;
     font-weight: 400;
-    margin-block: 0.5rem;
   }
   & a {
     transition: 0.15s;
@@ -37,14 +47,14 @@ const Main = styled.main`
       justify-content: center;
       gap: 0.5rem;
       padding: 1rem 1.5rem;
-      border: 1px solid rgb(var(--light-color));
-      border-radius: 0.25rem;
-      color: rgb(var(--light-color));
-      background-color: transparent;
+      border: 1px solid transparent;
+      border-radius: 5rem;
+      color: rgb(var(--primary-color));
+      background-color: rgb(var(--dark-color));
       font-size: 1rem;
-      font-weight: 600;
       cursor: pointer;
       transition: 0.15s;
+      box-shadow: 0 0 1rem rgb(var(--dark-color));
       & svg {
         transition: 0.15s;
         scale: 0;
@@ -74,6 +84,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
+        <h3>AN AUTONOMOUS INSTITUTE UNDER NCT,DELHI & MHRD ,GOVT. OF INDIA</h3>
+        <h2>Bharatiya Youth Computer Academy</h2>
+        <h4>An ISO 9001:2015 Certified Computer Educational Organisation</h4>
         <h1>Why join Infotech Success Point ?</h1>
         <p>Get career-ready with job-oriented learning</p>
         <Link href="/courses">

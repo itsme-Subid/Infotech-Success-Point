@@ -23,8 +23,9 @@ const CourseStyled = styled.div`
       text-align: center;
     }
     & .courseDetails {
+      width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       gap: 1rem;
       & span {
@@ -36,7 +37,7 @@ const CourseStyled = styled.div`
         flex-direction: column;
       }
     }
-    & .description{
+    & .description {
       text-align: justify;
     }
   }

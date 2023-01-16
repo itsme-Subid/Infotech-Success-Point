@@ -19,16 +19,20 @@ const Alert = styled.div`
   width: 90%;
   margin-inline: auto;
   color: rgba(var(--light-color));
-  .assist {
+  & .assist {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    .contact-detail {
+    font-size: 0.8rem;
+    & .contact-detail {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.25rem;
+      & svg {
+        font-size: 1.25rem;
+      }
     }
   }
   & .social {
@@ -38,8 +42,11 @@ const Alert = styled.div`
     gap: 1rem;
     a {
       transition: 0.15s;
+      & svg {
+        font-size: 1.25rem;
+      }
       &:hover {
-        color: rgba(var(--light-color), 0.5);
+        color: rgba(var(--primary-color));
       }
     }
   }
@@ -60,15 +67,11 @@ const Navbar = styled.nav`
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 600;
+    letter-spacing: 0.05rem;
     transition: 0.15s;
     cursor: pointer;
     &:hover {
-      & .ant-space-item {
-        color: rgba(var(--light-color), 0.5);
-      }
-      & svg {
-        color: rgba(var(--light-color), 0.5);
-      }
+      color: rgba(var(--primary-color), 0.5);
     }
   }
   & .menu {
@@ -89,7 +92,7 @@ const Navbar = styled.nav`
         position: relative;
         cursor: pointer;
         &:hover {
-          color: rgba(var(--light-color), 0.5);
+          color: rgba(var(--primary-color), 0.5);
         }
       }
     }
@@ -113,7 +116,7 @@ const Header = () => {
         <div className="assist">
           <p>For any assistance</p>
           <div className="contact-detail whatsapp">
-            <FaWhatsapp size="1.5rem" />
+            <FaWhatsapp />
             <a
               href="https://wa.me/918902175210"
               target="_blank"
@@ -123,13 +126,13 @@ const Header = () => {
             </a>
           </div>
           <div className="contact-detail phone">
-            <BsPhone size="1.5rem" />
+            <BsPhone />
             <a href="tele:+918902175210" target="_self" rel="noreferrer">
               +91 98306 73726
             </a>
           </div>
           <div className="contact-detail email">
-            <HiOutlineMail size="1.5rem" />
+            <HiOutlineMail />
             <a
               href="mailto:itsmesubid@gmail.com"
               target="_blank"
@@ -145,28 +148,28 @@ const Header = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <FaFacebook size="1.5rem" />
+            <FaFacebook />
           </a>
           <a
             href="https://www.instagram.com/itsmesubid"
             target="_blank"
             rel="noreferrer"
           >
-            <FaInstagram size="1.5rem" />
+            <FaInstagram />
           </a>
           <a
             href="https://www.linkedin.com/in/itsmesubid"
             target="_blank"
             rel="noreferrer"
           >
-            <FaLinkedin size="1.5rem" />
+            <FaLinkedin />
           </a>
           <a
             href="https://www.twitter.com/itsmesubid"
             target="_blank"
             rel="noreferrer"
           >
-            <FaTwitter size="1.5rem" />
+            <FaTwitter />
           </a>
         </div>
       </Alert>

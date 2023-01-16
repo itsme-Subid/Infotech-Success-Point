@@ -7,6 +7,7 @@ import {
   BsTwitter,
   BsYoutube,
 } from "react-icons/bs";
+import Link from "next/link";
 
 const FooterElement = styled.footer`
   background-color: rgb(var(--dark-color));
@@ -15,6 +16,7 @@ const FooterElement = styled.footer`
   border-radius: 2rem;
   text-align: center;
   transition: 0.15s;
+  box-shadow: 0 0 1rem rgb(var(--dark-color));
   & .row {
     margin-bottom: 2rem;
     display: flex;
@@ -37,12 +39,12 @@ const FooterElement = styled.footer`
         flex-direction: column;
         & h2 {
           font-size: 1.5rem;
-          color: rgb(var(--light-color));
+          color: rgb(var(--primary-color));
           text-transform: uppercase;
         }
         & span {
           font-size: 1rem;
-          color: rgb(var(--light-color), 0.8);
+          color: rgb(var(--primary-color), 0.8);
           text-transform: uppercase;
           font-weight: 600;
         }
@@ -62,11 +64,31 @@ const FooterElement = styled.footer`
             white-space: nowrap;
             font-weight: 500;
             &:hover {
-              color: rgb(var(--light-color), 0.8);
+              color: rgb(var(--primary-color), 0.8);
             }
             &.description {
               white-space: normal;
             }
+          }
+        }
+      }
+      &.dashboard {
+        justify-content: end;
+        & a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 1rem 1.5rem;
+          border: 1px solid transparent;
+          border-radius: 5rem;
+          color: rgb(var(--dark-color));
+          background-color: rgb(var(--primary-color));
+          font-size: 1rem;
+          cursor: pointer;
+          transition: 0.15s;
+          &:hover {
+            box-shadow: 0 0 0.5rem rgb(var(--primary-color));
           }
         }
       }
@@ -92,7 +114,7 @@ const FooterElement = styled.footer`
         gap: 0.5rem;
         font-size: 1.15rem;
         & svg:hover {
-          color: rgb(var(--light-color), 0.8);
+          color: rgb(var(--primary-color), 0.8);
         }
       }
       & .others {
@@ -101,7 +123,7 @@ const FooterElement = styled.footer`
         align-items: center;
         gap: 0.5rem;
         & span:hover {
-          color: rgb(var(--light-color), 0.8);
+          color: rgb(var(--primary-color), 0.8);
         }
       }
     }
@@ -173,50 +195,8 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col">
-            <div className="col-header">
-              <h2>Projects</h2>
-            </div>
-            <div className="col-body">
-              <ul>
-                <li>
-                  <a
-                    href="https://news365-itsme-subid.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    News365
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://resume-builder-itsme-subid.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Resume Builder
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://itsme-subid.github.io/MyNotebook/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    MyNotebook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://itsme-subid.github.io/Password-Generator/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Password Generator
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <div className="col dashboard">
+            <Link href="/">Dashboard</Link>
           </div>
         </div>
         <div className="credits">
