@@ -90,13 +90,13 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className={poppins.variable}>
         <GlobalStyle />
-        <motion.div variants={container} initial="hidden" animate="show">
-          <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading />}>
+          <motion.div variants={container} initial="hidden" animate="show">
             <Header />
             <Component {...pageProps} />
             <Footer />
-          </Suspense>
-        </motion.div>
+          </motion.div>
+        </Suspense>
       </div>
     </>
   );

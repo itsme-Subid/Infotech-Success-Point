@@ -42,6 +42,9 @@ const Alert = styled.div`
       & svg {
         font-size: 1.25rem;
       }
+      &:hover {
+        color: rgb(var(--primary-color));
+      }
     }
     @media screen and (max-width: 50rem) {
       width: 100%;
@@ -123,11 +126,27 @@ const Navbar = styled.nav`
         list-style: none;
         font-size: 1rem;
         font-weight: 500;
+        text-transform: capitalize;
         transition: 0.15s;
         position: relative;
         cursor: pointer;
         &:hover {
-          color: rgba(var(--primary-color), 0.5);
+          color: rgb(var(--primary-color));
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(var(--primary-color));
+          width: 0;
+          height: 0.1rem;
+          border-radius: 5rem;
+          transition: 0.15s;
+        }
+        &:hover::before {
+          width: 100%;
         }
         @media screen and (max-width: 50rem) {
           font-size: 1.25rem;
@@ -137,6 +156,36 @@ const Navbar = styled.nav`
           padding: 0.5rem 1rem;
           border-radius: 2rem;
           width: 100%;
+        }
+        &.dashboard {
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid transparent;
+            border-radius: 5rem;
+            color: rgb(var(--dark-color));
+            background-color: rgb(var(--primary-color));
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.15s;
+            &:hover {
+              box-shadow: rgba(var(--primary-color), 0.5) 0 0 0.5rem;
+            }
+          }
+          @media screen and (max-width: 50rem) {
+            font-size: 1.25rem;
+            text-align: center;
+            letter-spacing: 0.1rem;
+            background: rgba(var(--primary-color));
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            width: 100%;
+          }
+        }
+        &.dashboard:hover::before {
+          width: 0;
         }
       }
     }
@@ -195,6 +244,20 @@ const MobileNavbar = styled.nav`
 
 const Header = () => {
   const [menu, setMenu] = useState<boolean>(false);
+  const links = [
+    {
+      label: "home",
+      link: "/",
+    },
+    {
+      label: "contact",
+      link: "/contact",
+    },
+    {
+      label: "about",
+      link: "/about",
+    },
+  ];
   return (
     <>
       <StyledNavbar menu={menu}>
@@ -265,17 +328,13 @@ const Header = () => {
           </div>
           <div className="menu">
             <ul>
-              <li onClick={() => setMenu(!menu)}>
-                <Link href="/">Home</Link>
-              </li>
-              <li onClick={() => setMenu(!menu)}>
-                <Link href="/about">About</Link>
-              </li>
-              <li onClick={() => setMenu(!menu)}>
-                <Link href="/courses">Courses</Link>
-              </li>
-              <li onClick={() => setMenu(!menu)}>
-                <Link href="/contact">Contact</Link>
+              {links.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.link}>{link.label}</Link>
+                </li>
+              ))}
+              <li className="dashboard">
+                <Link href="/courses">Our Courses</Link>
               </li>
             </ul>
           </div>

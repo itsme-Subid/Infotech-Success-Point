@@ -19,6 +19,13 @@ const CourseStyled = styled.div`
     border-radius: 0.5rem;
     border: 1px solid rgba(var(--dark-color), 0.5);
     background: rgba(var(--light-color));
+    transition: all 0.15s;
+    &:hover {
+      border-color: transparent;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      transform: translateY(-2px);
+      scale: 1.025;
+    }
     & h2 {
       text-align: center;
     }
@@ -60,12 +67,7 @@ const Course = ({
   };
 }) => {
   return (
-    <CourseStyled
-      as={motion.div}
-      variants={item}
-      transition={{ delay: 1 }}
-      drag
-    >
+    <CourseStyled as={motion.div} variants={item} transition={{ delay: 1 }}>
       <div className="wrapper">
         <h2>{course.title}</h2>
         <p className="courseDetails">

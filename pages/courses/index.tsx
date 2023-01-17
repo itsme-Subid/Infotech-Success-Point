@@ -39,7 +39,6 @@ const container = {
 };
 
 const index = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [courses, setCourses] = useState<
     [
       {
@@ -62,16 +61,21 @@ const index = () => {
     },
   ]);
   const fetchCourses = async () => {
-    axios
-      .get(
-        "https://infotech-success-point.vercel.app/courseDetails/courses.json"
-      )
-      .then((response) => {
-        setCourses(response.data);
-        console.log(response.data);
-      });
+    try {
+      axios
+        .get("/api/courses")
+        .then((response) => setCourses(response.data))
+        .catch(() => {
+          axios
+            .get(
+              "https://infotech-success-point.vercel.app/courseDetails/courses.json"
+            )
+            .then((response) => setCourses(response.data));
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     fetchCourses();
   }, []);

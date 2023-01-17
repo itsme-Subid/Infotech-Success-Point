@@ -79,24 +79,22 @@ const FooterElement = styled.footer`
           }
         }
       }
-      &.dashboard {
-        justify-content: end;
-        & a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          padding: 1rem 1.5rem;
-          border: 1px solid transparent;
+      &.social li {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(var(--primary-color));
+          width: 0;
+          height: 0.1rem;
           border-radius: 5rem;
-          color: rgb(var(--dark-color));
-          background-color: rgb(var(--primary-color));
-          font-size: 1rem;
-          cursor: pointer;
           transition: 0.15s;
-          &:hover {
-            box-shadow: 0 0 0.5rem rgb(var(--primary-color));
-          }
+        }
+        &:hover::before {
+          width: 100%;
         }
       }
     }
@@ -137,6 +135,24 @@ const FooterElement = styled.footer`
         gap: 0.5rem;
         & span:hover {
           color: rgb(var(--primary-color), 0.8);
+        }
+        & span {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(var(--primary-color));
+            width: 0;
+            height: 0.1rem;
+            border-radius: 5rem;
+            transition: 0.15s;
+          }
+          &:hover::before {
+            width: 100%;
+          }
         }
       }
     }
@@ -207,9 +223,6 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="col dashboard">
-            <Link href="/auth/login">Dashboard</Link>
           </div>
         </div>
         <div className="credits">
