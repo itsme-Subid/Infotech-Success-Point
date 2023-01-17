@@ -48,18 +48,7 @@ body {
   place-items: center;
 }
 ::-webkit-scrollbar {
-  width: 0.25em;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-  transition: all 0.15s ease;
-}
-::-webkit-scrollbar-track:hover {
-  background: rgba(var(--dark-color), 0.01);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(var(--light-color), 0.25);
-  border-radius: 0.5rem;
+  width: 0;
 }
 a {
   text-decoration: none;
