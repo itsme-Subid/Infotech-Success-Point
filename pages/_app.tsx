@@ -2,12 +2,9 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 import { Poppins } from "@next/font/google";
 import { createGlobalStyle } from "styled-components";
-import { Suspense, lazy } from "react";
-import Loading from "../components/Loading";
 import { motion } from "framer-motion";
-
-const Footer = lazy(() => import("../components/Footer"));
-const Header = lazy(() => import("../components/Header"));
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -59,13 +56,7 @@ a {
 
 const container = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.5,
-      staggerDirection: -1,
-    },
-  },
+  show: { opacity: 1 },
 };
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -79,13 +70,11 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className={poppins.variable}>
         <GlobalStyle />
-        <Suspense fallback={<Loading />}>
-          <motion.div variants={container} initial="hidden" animate="show">
-            <Header />
-            <Component {...pageProps} />
-            <Footer />
-          </motion.div>
-        </Suspense>
+        <motion.div variants={container} initial="hidden" animate="show">
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </motion.div>
       </div>
     </>
   );

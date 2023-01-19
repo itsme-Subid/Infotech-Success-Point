@@ -38,19 +38,8 @@ const container = {
   },
 };
 
-const index = () => {
-  const [courses, setCourses] = useState<
-    [
-      {
-        id: string;
-        title: string;
-        description: string;
-        duration: string;
-        codeNo: string;
-        eligibility: string;
-      }
-    ]
-  >([
+export default function CourseIndex() {
+  const [courses, setCourses] = useState([
     {
       id: "",
       title: "",
@@ -94,6 +83,4 @@ const index = () => {
       </motion.div>
     </Courses>
   );
-};
-
-export default index;
+}
