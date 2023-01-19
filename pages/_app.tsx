@@ -3,8 +3,10 @@ import type { AppProps } from "next/app";
 import { Poppins } from "@next/font/google";
 import { createGlobalStyle } from "styled-components";
 import { motion } from "framer-motion";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Suspense, lazy } from "react";
+
+const Header = lazy(() => import("../components/Header"));
+const Footer = lazy(() => import("../components/Footer"));
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -70,11 +72,13 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className={poppins.variable}>
         <GlobalStyle />
-        <motion.div variants={container} initial="hidden" animate="show">
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
-        </motion.div>
+        <Suspense>
+          <motion.div variants={container} initial="hidden" animate="show">
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+          </motion.div>
+        </Suspense>
       </div>
     </>
   );
