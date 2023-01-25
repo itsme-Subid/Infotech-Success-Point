@@ -157,7 +157,7 @@ const Navbar = styled.nav`
           border-radius: 2rem;
           width: 100%;
         }
-        &.dashboard {
+        &.styledLi {
           a {
             display: flex;
             align-items: center;
@@ -184,7 +184,7 @@ const Navbar = styled.nav`
             width: 100%;
           }
         }
-        &.dashboard:hover::before {
+        &.styledLi:hover::before {
           width: 0;
         }
       }
@@ -329,11 +329,11 @@ const Header = () => {
           <div className="menu">
             <ul>
               {links.map((link, index) => (
-                <li key={index}>
+                <li key={index} onClick={() => setMenu(false)}>
                   <Link href={link.link}>{link.label}</Link>
                 </li>
               ))}
-              <li className="dashboard">
+              <li className="styledLi" onClick={() => setMenu(false)}>
                 <Link href="/courses">Our Courses</Link>
               </li>
             </ul>

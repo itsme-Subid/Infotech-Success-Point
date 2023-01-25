@@ -2,7 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import { BsArrowRightShort } from "react-icons/bs";
 import Link from "next/link";
-import bg from "./../public/homePageBackground.jpg";
+import bg from "./../public/images/homePageBackground.jpg";
 
 const Main = styled.main`
   display: flex;

@@ -11,6 +11,9 @@ const Courses = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  @media screen and (max-width: 50rem) {
+    margin-top: 5rem;
+  }
   & h1 {
     width: 100%;
   }
