@@ -61,11 +61,14 @@ const About = styled.div`
     place-content: center;
     border-radius: 2rem;
     background-color: rgb(128, 128, 128, 0.075);
-    gap: 2rem;
     padding: 4rem;
     @media screen and (max-width: 50rem) {
       padding: 1.5rem;
       border-radius: 1rem;
+      gap: 1rem;
+      & h1{
+        font-size: 1.5rem;
+      }
     }
   }
 `;

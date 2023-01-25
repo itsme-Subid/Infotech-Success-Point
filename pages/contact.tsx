@@ -71,6 +71,10 @@ const Contact = styled.div`
     @media screen and (max-width: 50rem) {
       padding: 1.5rem;
       border-radius: 1rem;
+      gap: 1rem;
+      & h1{
+        font-size: 1.5rem;
+      }
     }
     & ul {
       list-style: none;
