@@ -68,6 +68,10 @@ const Contact = styled.div`
     background-color: rgb(128, 128, 128, 0.075);
     gap: 2rem;
     padding: 4rem;
+    @media screen and (max-width: 50rem) {
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
     & ul {
       list-style: none;
       display: flex;
@@ -89,6 +93,8 @@ const Contact = styled.div`
           font-weight: 500;
           transition: 0.15s;
           position: relative;
+          display: flex;
+          flex-direction: column;
           &::before {
             content: "";
             position: absolute;
@@ -114,7 +120,8 @@ const Index = () => {
   const contacts = [
     {
       icon: <IoLocationSharp />,
-      content: "Kumarpara, Baidyabati, Hooghly, Pin-712222, West Bengal, INDIA",
+      content:
+        "Near Govt. Quarter, 52/25 Kamarpara lane, Baidyabati, Hooghly, Pin: 712222, West Bengal, INDIA",
     },
     {
       icon: <BsWhatsapp />,

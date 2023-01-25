@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
   outline: none;
 }
 body {
+  position: relative;
   background: rgba(var(--light-color), 1);
   color: rgba(var(--dark-color), 1);
   overflow-x: hidden;

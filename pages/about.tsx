@@ -17,7 +17,7 @@ const animateAfter = keyframes`
     }
 `;
 
-const Contact = styled.div`
+const About = styled.div`
   margin-top: 8rem;
   @media screen and (max-width: 50rem) {
     margin-top: 5rem;
@@ -63,12 +63,16 @@ const Contact = styled.div`
     background-color: rgb(128, 128, 128, 0.075);
     gap: 2rem;
     padding: 4rem;
+    @media screen and (max-width: 50rem) {
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
   }
 `;
 
 const Index = () => {
   return (
-    <Contact>
+    <About>
       <div className="card container">
         <h1>Infotech Success Point</h1>
         <p>
@@ -140,7 +144,7 @@ const Index = () => {
           and take the first step towards a successful career in technology!
         </p>
       </div>
-    </Contact>
+    </About>
   );
 };
 
