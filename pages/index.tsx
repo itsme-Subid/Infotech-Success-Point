@@ -1,4 +1,3 @@
-import Head from "next/head";
 import styled from "styled-components";
 import { BsArrowRightShort } from "react-icons/bs";
 import Link from "next/link";

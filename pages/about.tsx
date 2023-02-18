@@ -1,3 +1,4 @@
+import Head from "next/head";
 import styled, { keyframes } from "styled-components";
 
 const animateBefore = keyframes`
@@ -66,7 +67,7 @@ const About = styled.div`
       padding: 1.5rem;
       border-radius: 1rem;
       gap: 1rem;
-      & h1{
+      & h1 {
         font-size: 1.5rem;
       }
     }
@@ -76,6 +77,9 @@ const About = styled.div`
 const Index = () => {
   return (
     <About>
+      <Head>
+        <title>About | Infotech Success Point</title>
+      </Head>
       <div className="card container">
         <h1>Infotech Success Point</h1>
         <p>

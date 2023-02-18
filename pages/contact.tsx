@@ -4,6 +4,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { BsFillTelephoneFill, BsWhatsapp } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { TfiWorld } from "react-icons/tfi";
+import Head from "next/head";
 
 const animateBefore = keyframes`
     0%,100% {
@@ -72,7 +73,7 @@ const Contact = styled.div`
       padding: 1.5rem;
       border-radius: 1rem;
       gap: 1rem;
-      & h1{
+      & h1 {
         font-size: 1.5rem;
       }
     }
@@ -150,6 +151,9 @@ const Index = () => {
   ];
   return (
     <Contact>
+      <Head>
+        <title>Contact | Infotech Success Point</title>
+      </Head>
       <div className="card container">
         <h1>Infotech Success Point</h1>
         <ul>
