@@ -4,7 +4,7 @@ import { Poppins } from "@next/font/google";
 import { createGlobalStyle } from "styled-components";
 import { motion } from "framer-motion";
 import { Suspense, lazy } from "react";
-import favicon from "./../public/images/favicon.ico";
+import favicon from "./../public/icons/favicon.ico";
 
 const Header = lazy(() => import("../components/Header"));
 const Footer = lazy(() => import("../components/Footer"));
