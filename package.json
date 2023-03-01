@@ -21,7 +21,7 @@
     "@typescript-eslint/parser": "^5.48.2",
     "axios": "^1.2.2",
     "eslint": "^8.35.0",
-    "eslint-config-next": "13.1.1",
+    "eslint-config-next": "13.2.1",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "framer-motion": "^8.2.4",
